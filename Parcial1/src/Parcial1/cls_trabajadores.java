@@ -2,8 +2,8 @@
 package Parcial1;
 
 
-public class cls_trabjadores {
-    private int int_id;
+public class cls_trabajadores {
+    private String str_id;
     private String str_nombre;
     private String str_apellidos;
     private int int_contacto;
@@ -12,8 +12,8 @@ public class cls_trabjadores {
     private String str_sexo;
     private float  flt_salario;
 
-    public cls_trabjadores(int int_id, String str_nombre, String str_apellidos, int int_contacto, String str_correo, String str_direccion, String str_sexo, float flt_salario) {
-        this.int_id = int_id;
+    public cls_trabajadores(String str_id, String str_nombre, String str_apellidos, int int_contacto, String str_correo, String str_direccion, String str_sexo, float flt_salario) {
+        this.str_id = str_id;
         this.str_nombre = str_nombre;
         this.str_apellidos = str_apellidos;
         this.int_contacto = int_contacto;
@@ -24,7 +24,7 @@ public class cls_trabjadores {
     }
 
     public void setInt_id(int int_id) {
-        this.int_id = int_id;
+        this.str_id = str_id;
     }
 
     public void setStr_nombre(String str_nombre) {
@@ -55,8 +55,8 @@ public class cls_trabjadores {
         this.flt_salario = flt_salario;
     }
 
-    public int getInt_id() {
-        return int_id;
+    public String getInt_id() {
+        return str_id;
     }
 
     public String getStr_nombre() {

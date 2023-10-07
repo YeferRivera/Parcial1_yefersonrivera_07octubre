@@ -1,18 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package Parcial1;
+
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Helpdeskgreenlad
  */
 public class frm_trabajadores extends javax.swing.JFrame {
-
-    /**
-     * Creates new form frm_trabajadores
-     */
+    cls_trabajadores[] ingreso= new cls_trabajadores[20];
+    int int_posiciones=0;
+    
     public frm_trabajadores() {
         initComponents();
     }
@@ -82,6 +80,11 @@ public class frm_trabajadores extends javax.swing.JFrame {
         });
 
         btn_Registrar.setText("Registrar");
+        btn_Registrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_RegistrarActionPerformed(evt);
+            }
+        });
 
         btn_Consultar.setText("Consultar");
         btn_Consultar.addActionListener(new java.awt.event.ActionListener() {
@@ -272,6 +275,23 @@ public class frm_trabajadores extends javax.swing.JFrame {
     private void btn_NuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_NuevoActionPerformed
         fnt_Limpiar();
     }//GEN-LAST:event_btn_NuevoActionPerformed
+
+    private void btn_RegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegistrarActionPerformed
+        if(txt_Id.getText().equals("")||txt_Nombre.getText().equals("")
+                ||txt_Apellidos.getText().equals("")||txt_Contacto.getText().equals("")||
+                txt_Correo.getText().equals("")||txt_Direccion.getText().equals("")||txt_Sexo.getText().equals("")||txt_Salario.getText().equals("")){
+                JOptionPane.showMessageDialog(null,"Debe ingresar todos los datos", "Registrar",
+                        JOptionPane.ERROR_MESSAGE);
+        }else{
+            ingreso[int_posiciones]=new cls_trabajadores(
+            txt_Id.getText(),txt_Nombre.getText(),txt_Apellidos.getText(),Float.parseFloat(txt_Salario.getText()),
+            Integer.parseInt(txt_Contacto.getText()));
+            int_posiciones+=1;
+            JOptionPane.showMessageDialog(null, "Registro exitoso", "Registro",
+                    JOptionPane.INFORMATION_MESSAGE);
+            
+        }
+    }//GEN-LAST:event_btn_RegistrarActionPerformed
 
     /**
      * @param args the command line arguments
